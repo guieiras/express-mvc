@@ -1,0 +1,11 @@
+html
+  head
+    title
+      block title
+      |  - Express MVC
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    script(src='/javascripts/app.js')
+  body
+    include ./navigation.pug
+
+    block content
