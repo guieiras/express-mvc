@@ -1,0 +1,11 @@
+# Dependency directory
+node_modules
+
+# App
+server.js
+
+# Configuration Files
+config
+
+# Assets
+assets

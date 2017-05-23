@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "expressjs mvc boilerplate",
   "scripts": {
+    "lint": "./node_modules/.bin/eslint app/",
+    "test": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,10 @@
   },
   "homepage": "https://github.com/guieiras/express-mvc",
   "devDependencies": {
-    "sequelize-cli": "^2.5.1"
+    "eslint": "^3.12.2",
+    "mocha": "^2.3.3",
+    "node-fetch": "^1.0.6",
+    "sequelize-cli": "^2.5.1",
+    "superagent": "^1.4.0"
   }
 }
