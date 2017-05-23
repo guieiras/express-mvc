@@ -2,6 +2,7 @@ module.exports = class BaseController {
   constructor(req, res) {
     this.request = req
     this.response = res
+    this.vars = {}
   }
 
   get params() {
@@ -9,7 +10,11 @@ module.exports = class BaseController {
   }
 
   render(view) {
-    this.response.render(view)
+    this.response.render(view, this.vars)
+  }
+
+  setVar(key, value) {
+    this.vars[key] = value
   }
 
   sendStatus(status) {
