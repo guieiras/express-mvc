@@ -4,7 +4,7 @@ let express        = require('express')
 let path           = require('path')
 let session        = require('express-session')
 let compression    = require('compression')
-
+let sassMiddleware = require('node-sass-middleware');
 let models         = require('../config/models')
 let router         = require('../config/router')
 
@@ -26,11 +26,21 @@ module.exports = function(app) {
     saveUninitialized: true,
     resave: true,
   }))
-
+  
+  app.use(
+    sassMiddleware({
+      src: path.join(__dirname, '..', 'assets', 'sass'),
+      dest: path.join(__dirname, '../dist/stylesheets'),
+      prefix:  '/stylesheets',
+      indentedSyntax: true
+    })
+  )
+  app.use(express.static('/stylesheets'))
+  
   app.set('models', models)
   app.set('views', path.join(__dirname, '../src/views'))
   app.set('view engine', 'pug')
-  app.use(express.static(path.join(__dirname, '../assets')))
+  app.use(express.static(path.join(__dirname, '../public')))
   app.use((request, response) => {
     response.status(404)
     response.render('global/404')
