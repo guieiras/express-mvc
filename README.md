@@ -44,11 +44,15 @@ module.exports = {
 - Set .env variables
 
 `APP_SECRET`: Encryptation key
+
 `PORT`: HTTP port
 
 `DB_HOST`: PostgreSQL host
+
 `DB_USER`: PostgreSQL username
+
 `DB_PASSWORD`: PostgreSQL password
+
 `DB_DATABASE`: PostgreSQL database name
 
 ## Commands
